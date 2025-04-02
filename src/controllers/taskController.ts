@@ -64,7 +64,7 @@ export const updateTask = async (c:Context) => {
         if (!task) {
             return c.json({
                 success: false,
-                message: 'Task not found'
+                message: 'Task not found under that id'
             });
         }
         return c.json({
@@ -85,12 +85,11 @@ export const deleteTask = async (c:Context) => {
         if (!task) {
             return c.json({
                 success: false,
-                message: 'Task not found'
+                message: 'Task not found under that id'
             });
         }
         return c.json({
             success: true,
-            data: task,
             message: 'Task deleted successfully'
         });
     } catch (error) {
